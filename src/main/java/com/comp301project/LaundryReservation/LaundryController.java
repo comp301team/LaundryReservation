@@ -14,7 +14,7 @@ public class LaundryController {
 	public String get(Model model) {
 		model.addAttribute("message",WashingMachineService.getWashingMachineServiceInstance().getAllWashingMachines());
 		model.addAttribute("currentTime",TimeHandler.getTimeHandlerObject());
-		return "deneme";
+		return "home";
 	}
 	
 	@GetMapping("/qq")

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xml:th="https://www.thymeleaf.org/" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Laundry Reservation</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+.column2 {
+  float: left;
+  width: 33%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.wrapper {
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+    </style>
+</head>
+
+<body>
+<h1 style="text-align:center;">Laundry Reservation</h1>
+<div class="row">
+    <div class="column">
+        <h2 style="text-align:center;">Machine 1</h2>
+        <center><img th:src="@{/images/laundry1.png}" width="200" height="225"/></center>
+        <center><button th:attr="onclick=|upload('${gallery}')|" type="button"> Click for reserve</button></center>
+    </div>
+    <div class="column">
+        <h2 style="text-align:center;">Machine 2</h2>
+        <center><img th:src="@{/images/laundry1.png}" width="200" height="225"/></center>
+        <center><button th:attr="onclick=|upload('${gallery}')|" type="button"> Click for reserve</button></center>
+    </div>
+    <div class="column">
+        <h2 style="text-align:center;">Machine 3</h2>
+        <center><img th:src="@{/images/laundry1.png}" width="200" height="225"/></center>
+        <center><button th:attr="onclick=|upload('${gallery}')|" type="button"> Click for reserve</button></center>
+    </div>
+    <div class="column">
+        <h2 style="text-align:center;">Machine 4</h2>
+        <center><img th:src="@{/images/laundry1.png}" width="200" height="225"/></center>
+        <center><button th:attr="onclick=|upload('${gallery}')|" type="button"> Click for reserve</button></center>
+    </div>
+</div>
+<div class="row" style="margin-top: 25px;">
+    <div class="column">
+        <h2 style="text-align:center;">Machine 5</h2>
+        <center><img th:src="@{/images/laundry1.png}" width="200" height="225"/></center>
+        <center><button th:attr="onclick=|upload('${gallery}')|" type="button"> Click for reserve</button></center>
+    </div>
+    <div class="column">
+        <h2 style="text-align:center;">Machine 6</h2>
+        <center><img th:src="@{/images/laundry1.png}" width="200" height="225"/></center>
+        <center><button th:attr="onclick=|upload('${gallery}')|" type="button"> Click for reserve</button></center>
+    </div>
+    <div class="column">
+        <h2 style="text-align:center;">Machine 7</h2>
+        <center><img th:src="@{/images/laundry1.png}" width="200" height="225"/></center>
+        <center><button th:attr="onclick=|upload('${gallery}')|" type="button"> Click for reserve</button></center>
+    </div>
+    <div class="column">
+        <h2 style="text-align:center;">Machine 8</h2>
+        <center><img th:src="@{/images/laundry1.png}" width="200" height="225"/></center>
+        <center><button th:attr="onclick=|upload('${gallery}')|" type="button"> Click for reserve</button></center>
+    </div>
+</div>
+<center class="row">
+    <div class="column2">
+        <button value="back" style="margin-top: 50px; float: right;"><</button>
+    </div>
+    <div class="column2">
+        <h3 style="margin-top: 50px;" th:text="|${currentTime.getCurrentHourAsNicelyFormatted()}|"> </h3>
+    </div>
+    <div class="column2">
+        <button value="next" style="margin-top: 50px; float: left;">></button>
+    </div>
+</center>
+</body>
+</html>
