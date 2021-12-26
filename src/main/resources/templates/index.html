@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Laundry Reservation</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+.column2 {
+  float: left;
+  width: 33%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.wrapper {
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+    </style>
+</head>
+
+<body>
+<h1 style="text-align:center;">Laundry Reservation</h1>
+<div class="row">
+	<th:block th:each='washingMachine : ${allMachines}'>
+
+    <div class="column">
+        <h2 style="text-align:center;" th:text="|MACHINE ${washingMachineStat.index+1}|"></h2>
+        <center><img src="/washingmachine.png" width="250" height="300"></center>
+    	<th:block th:if="${washingMachine.isAvailableAtThisTime(currentTime.getCurrentHour())}">
+    	<center><form  th:action="@{'/'}" th:method="post" >
+			<input type="hidden" th:value="${washingMachine.getWashingMachineID()}" name="value" />
+    		<button type="submit">
+        		Click For Reservation
+    		</button>
+		</form>
+		
+		</center>
+		</th:block>
+		<th:block th:unless="${washingMachine.isAvailableAtThisTime(currentTime.getCurrentHour())}">
+    	<center>
+        		<p>ALREADY RESERVED</p>
+		
+		</center>
+		</th:block>
+    </div>
+    
+    </th:block>
+</div>
+
+<center class="row">
+    <div class="column2">
+	    <form th:action="@{'/'}" th:method="post" >
+			<input type="hidden" th:value="decreaseHour" name="value" />
+	    	<button type="submit" style="margin-top: 50px; float: right;">
+	        	DECREASE HOUR BY ONE
+	    	</button>
+		</form>
+    </div>
+    <div class="column2">
+        <h3 style="margin-top: 50px;" th:text="${currentTime.getCurrentHourAsNicelyFormatted()}"> </h3>
+    </div>
+    <div class="column2">
+	    <form th:action="@{'/'}" th:method="post" >
+			<input type="hidden" th:value="increaseHour" name="value" />
+	    	<button type="submit" style="margin-top: 50px; float: left;">
+	        	INCREASE HOUR BY ONE
+	    	</button>
+		</form>
+    </div>
+</center>
+</body>
+</html>

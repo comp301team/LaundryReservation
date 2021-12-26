@@ -6,11 +6,11 @@ import com.comp301project.LaundryService.WashingMachineService;
 
 public class WashingMachine {
 	
-	public int washingMachineID;
+	public String washingMachineID;
 	private int pricePerHour;
 	private List<Integer> reservedHours;
 	
-	public WashingMachine(int washingMachineID,int pricePerHour,List<Integer> reservedHours) {
+	public WashingMachine(String washingMachineID,int pricePerHour,List<Integer> reservedHours) {
 		this.washingMachineID=washingMachineID;
 		this.pricePerHour=pricePerHour;
 		this.reservedHours=reservedHours;
@@ -19,11 +19,11 @@ public class WashingMachine {
 		//bu line otomatik ekleme icin simdilik comment
 	}
 	
-	public int getWashingMachineID() {
+	public String getWashingMachineID() {
 		return washingMachineID;
 	}
 	
-	public void setWashingMachineID(int washingMachineID) {
+	public void setWashingMachineID(String washingMachineID) {
 		this.washingMachineID = washingMachineID;
 	}
 	
@@ -37,7 +37,6 @@ public class WashingMachine {
 	
 	public List<Integer> getReservedHours() {
 		this.sortReservedHours();
-		System.out.println(reservedHours);
 		return reservedHours;
 	}
 	
@@ -46,12 +45,11 @@ public class WashingMachine {
 	}
 	
 	public void makeReservation(int hour) {
-		System.out.println("reservation for "+hour+" has done successfully!!");
-
-		this.reservedHours.add(hour);
-		//System.out.println(this.reservedHours);
-
-		this.sortReservedHours();
+		if(isAvailableAtThisTime(hour)) {
+			System.out.println("reservation for machine "+this.washingMachineID+" at "+hour+" has done successfully!!");
+			this.reservedHours.add(hour);
+			this.sortReservedHours();
+		}
 	}
 	
 	private void sortReservedHours() {

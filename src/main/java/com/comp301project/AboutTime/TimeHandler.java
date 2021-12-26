@@ -13,22 +13,24 @@ public class TimeHandler {
 	
 	public void increaseHourByOne() {
 		this.currentHour++;
-		handleHourEndPoints();
+		if(this.currentHour==24) {
+			this.currentHour=0;
+		}
 	}
 	
 	public void decreaseHourByOne() {
 		this.currentHour--;
-		handleHourEndPoints();
+		if(this.currentHour==-1) {
+			this.currentHour=23;
+		}
 	}
 	
 	public int getCurrentHour() {
-		handleHourEndPoints();
 		return currentHour;
 	}
 	
 	public void setCurrentHour(int currentHour) {
 		this.currentHour=currentHour;
-		handleHourEndPoints();
 	}
 	
 	public String getCurrentHourAsNicelyFormatted() {
@@ -41,14 +43,5 @@ public class TimeHandler {
 		}
 	}
 	
-	private void handleHourEndPoints() {
-		if(this.currentHour>23) {
-			this.currentHour=0;
-		}
-		
-		if(this.currentHour<0) {
-			this.currentHour=23;
-		}
-	}
 	
 }

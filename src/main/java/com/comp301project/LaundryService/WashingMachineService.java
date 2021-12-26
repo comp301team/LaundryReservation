@@ -42,5 +42,14 @@ public class WashingMachineService {
 		}
 		return this.availableWashingMachines;
 	}
-
+	
+	public WashingMachine getWashingMachineById(String Id) {
+		WashingMachine washingMachine = null;
+		for(int i=0;i<this.allWashingMachines.size();i++){
+			if(allWashingMachines.get(i).getWashingMachineID().equals(Id)) {
+				washingMachine=allWashingMachines.get(i);
+			}
+		}
+		return washingMachine;
+	}
 }
