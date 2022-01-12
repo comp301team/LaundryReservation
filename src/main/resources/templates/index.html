@@ -18,14 +18,14 @@
 	<th:block th:each='washingMachine : ${allMachines}'>
     <div class="column">
         <h2 style="text-align:center;" th:text="|MACHINE ${washingMachineStat.index+1}|"></h2>
-        <img style="width: 60%;" src="/washingmachine.png">
+        <img class="center" src="/washingmachine.png">
     	<th:block th:if="${washingMachine.isAvailableAtThisTime(currentTime.getCurrentHour())}">
 
 		<div id="wrapps">
 			<form th:action="@{'/'}" th:method="post" >
 				<input type="hidden" th:value="${washingMachine.getWashingMachineID()}" name="value" />
-				<button type="submit">
-					Click For Reservation
+				<button class="btn-1" type="submit">
+					RESERVATION
 				</button>
 			</form>
 		</div>
@@ -47,9 +47,9 @@
     <div class="column2">
 	    <form th:action="@{'/'}" th:method="post" >
 			<input type="hidden" th:value="decreaseHour" name="value" />
-				<a type="submit" style="float: right;" href="#">
-					<span class="arrow arrow-left"></span>
-				</a>
+				<button class="btn-2" type="submit" style="float: right;">
+	        		<
+	    		</button>
 		</form>
     </div>
     <div class="column2">
@@ -58,9 +58,9 @@
     <div class="column2">
 	    <form th:action="@{'/'}" th:method="post" >
 			<input type="hidden" th:value="increaseHour" name="value" />
-	    	<a type="submit" style="float: left;" href="#">
-				<span class="arrow arrow-right"></span>
-			</a>
+	    		<button class="btn-2" type="submit" style="float: left;">
+					>
+				</button>
 		</form>
     </div>
 	<div class="column2">
