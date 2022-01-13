@@ -13,11 +13,11 @@
 </head>
 
 <body>
-<h1 style="text-align:center;">Laundry Reservation</h1>
+<h1 class="header" style="font-size: 38px;">Laundry Reservation</h1>
 <div class="row">
 	<th:block th:each='washingMachine : ${allMachines}'>
     <div class="column">
-        <h2 style="text-align:center;" th:text="|MACHINE ${washingMachineStat.index+1}|"></h2>
+        <h2 class="headermachine" th:text="|Machine ${washingMachineStat.index+1}|"></h2>
         <img class="center" src="/washingmachine.png">
     	<th:block th:if="${washingMachine.isAvailableAtThisTime(currentTime.getCurrentHour())}">
 
@@ -25,7 +25,7 @@
 			<form th:action="@{'/'}" th:method="post" >
 				<input type="hidden" th:value="${washingMachine.getWashingMachineID()}" name="value" />
 				<button class="btn-1" type="submit">
-					RESERVATION
+					Click for Reserve
 				</button>
 			</form>
 		</div>
@@ -33,7 +33,7 @@
 
 		</th:block>
 		<th:block th:unless="${washingMachine.isAvailableAtThisTime(currentTime.getCurrentHour())}">
-        		<button class="btn-1" type="submit">
+        		<button class="btn-3" type="submit">
 					Already Reserved
 				</button>
 		</th:block>
@@ -55,7 +55,7 @@
 		</form>
     </div>
     <div class="column2">
-        <h3 style="text-align:center;" th:text="${currentTime.getCurrentHourAsNicelyFormatted()}"> </h3>
+        <h3 style="clock" th:text="${currentTime.getCurrentHourAsNicelyFormatted()}"> </h3>
     </div>
     <div class="column2">
 	    <form th:action="@{'/'}" th:method="post" >
