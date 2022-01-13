@@ -1,34 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:900');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:800');
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@500&display=swap');
 
 * {
   box-sizing: border-box;
-  font-family: Righteous;
-  letter-spacing: 4px;
-  background-color: #78807f;
-  color: #f0fffe;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  letter-spacing: 2px;
+  background-color: #E2BEA0;
+  color: #545479;
 }
 button{
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
-p{
-  text-align: center;
+.header{
+  text-align:center;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+.headermachine{
+  margin-bottom: 0px;
+  text-align:center;
+  font-size: 30px;
 }
 .center{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
-}
-.container{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
+  width: 55%;
 }
 
 .btn-1{
@@ -36,39 +36,55 @@ p{
   height: 50px;
   border:none;
   color: white;
-  background-color: #DE834D;
-  border-radius: 4px;
-  box-shadow: inset 0 0 0 0 #781D42;
+  background-color: #384B42;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 0 #BE3F4B;
   transition: ease-out 0.3s;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   outline: none;
 }
 
 .btn-1:hover{
-  box-shadow: inset 180px 0 0 0 #781D42;
+  box-shadow: inset 180px 0 0 0 #BE3F4B;
 }
 
 .btn-2{
   width: 40px;
   height: 40px;
   border:none;
-  color: white;
-  background-color: #DE834D;
-  border-radius: 1px;
-  box-shadow: inset 0 0 0 0 #781D42;
+  color: #cdeae8;
+  background-color: #A4796E;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 0 #85cbc9;
   transition: ease-out 0.3s;
   font-size: 24px;
   outline: none;
 }
 
 .btn-2:hover{
-  box-shadow: inset 40px 0 0 0 #781D42;
+  box-shadow: inset 40px 0 0 0 #85cbc9;
+}
+
+.btn-3{
+  width: 180px;
+  height: 50px;
+  border:none;
+  color: white;
+  background-color: #BE3F4B;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 0 #BE3F4B;
+  transition: ease-out 0.3s;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+.btn-3:hover{
+  box-shadow: inset 180px 0 0 0 #BE3F4B;
 }
 
 .column {
   float: left;
   width: 25%;
-  padding: 10px;
 }
 .column2 {
   float: left;
@@ -90,41 +106,7 @@ p{
   left: 50%;
 }
 
-.arrow {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  border-top: 2px solid #000;
-  border-right: 2px solid #000;
-}
-
-.arrow-top {
-  transform: rotate(-45deg);
-}
-.arrow-right {
-  transform: rotate(45deg);
-}
-.arrow-bottom {
-  transform: rotate(135deg);
-}
-.arrow-left {
-  transform: rotate(-135deg);
-}
-.arrow-top-narrow {
-  transform: rotate(-45deg) skew(-15deg, -15deg);
-}
-.arrow-top-wide {
-  transform: rotate(-45deg) skew(7deg, 7deg);
-}
-.arrow-top-left {
-  transform: rotate(-90deg) skew(-10deg, -10deg);
-}
-.arrow-top-right {
-  transform: rotate(0) skew(-10deg, -10deg);
-}
-.arrow-bottom-left {
-  transform: rotate(180deg) skew(-10deg, -10deg);
-}
-.arrow-bottom-right {
-  transform: rotate(90deg) skew(-10deg, -10deg);
+.clock{
+  text-align: center;
+  font-size: 24px;
 }
