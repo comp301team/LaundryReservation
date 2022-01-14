@@ -3,18 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Laundry Reservation</title>
-    <!-- Latest compiled and minified CSS -->
-    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 
 <body>
 <h1 class="header" style="font-size: 38px;">Laundry Reservation</h1>
-<div class="row">
+<div >
 	<th:block th:each='washingMachine : ${allMachines}'>
     <div class="column">
         <h2 class="headermachine" th:text="|Machine ${washingMachineStat.index+1}|"></h2>
@@ -42,8 +36,8 @@
     </th:block>
 </div>
 
-<div class="row">	
-		<form th:action="@{'/'}" th:method="post" style="float:left; padding-left: 812px; padding-top: 15px;">
+<div >	
+		<form th:action="@{'/'}" th:method="post" style="float:left; padding-left: 43%; padding-top: 15px; text-align: center;">
 			<input type="hidden" th:value="decreaseHour" name="value" />
 				<button class="btn-2" type="submit">
 					<
@@ -52,7 +46,7 @@
 
 		<h3 class="clock" style="float: left; padding-left: 2%; padding-right: 2%;" th:text="${currentTime.getCurrentHourAsNicelyFormatted()}"> </h3>	
 		
-		<form th:action="@{'/'}" th:method="post" style="float:left; padding-top: 15px;">
+		<form th:action="@{'/'}" th:method="post" style="float:left; padding-top: 15px; text-align: center;">
 			<input type="hidden" th:value="increaseHour" name="value" />
 				<button class="btn-2" type="submit">
 					>
