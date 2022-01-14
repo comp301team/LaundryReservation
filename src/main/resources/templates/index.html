@@ -46,7 +46,7 @@
 	<div class="column2">
 
 	</div>
-    <div class="column2">
+    <div class="column2" style="padding-top: 20px;">
 	    <form th:action="@{'/'}" th:method="post" >
 			<input type="hidden" th:value="decreaseHour" name="value" />
 				<button class="btn-2" type="submit" style="float: right;">
@@ -55,9 +55,9 @@
 		</form>
     </div>
     <div class="column2">
-        <h3 style="clock" th:text="${currentTime.getCurrentHourAsNicelyFormatted()}"> </h3>
+        <h3 class="clock" th:text="${currentTime.getCurrentHourAsNicelyFormatted()}"> </h3>
     </div>
-    <div class="column2">
+    <div class="column2" style="padding-top: 20px;">
 	    <form th:action="@{'/'}" th:method="post" >
 			<input type="hidden" th:value="increaseHour" name="value" />
 	    		<button class="btn-2" type="submit" style="float: left;">
