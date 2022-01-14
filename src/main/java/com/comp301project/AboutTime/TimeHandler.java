@@ -1,4 +1,5 @@
 package com.comp301project.AboutTime;
+
 public class TimeHandler {
 	
 	private int currentHour=0;
@@ -37,11 +38,9 @@ public class TimeHandler {
 		if(this.currentHour/10==0) {
 			return "0"+this.currentHour+":00-"+"0"+this.currentHour+":59";
 		}
-		
 		else {
 			return this.currentHour+":00-"+this.currentHour+":59";
 		}
 	}
-	
 	
 }

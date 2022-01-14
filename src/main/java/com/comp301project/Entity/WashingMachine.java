@@ -2,8 +2,6 @@ package com.comp301project.Entity;
 import java.util.Collections;
 import java.util.List;
 
-import com.comp301project.LaundryService.WashingMachineService;
-
 public class WashingMachine {
 	
 	public String washingMachineID;
@@ -15,8 +13,6 @@ public class WashingMachine {
 		this.pricePerHour=pricePerHour;
 		this.reservedHours=reservedHours;
 		this.sortReservedHours();
-		WashingMachineService.getWashingMachineServiceInstance().addNewWashingMachine(this);
-		//bu line otomatik ekleme icin simdilik comment
 	}
 	
 	public String getWashingMachineID() {
