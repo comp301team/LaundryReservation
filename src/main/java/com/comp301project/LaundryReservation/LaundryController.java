@@ -1,5 +1,7 @@
 package com.comp301project.LaundryReservation;
 
+import java.io.IOException;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +26,7 @@ public class LaundryController {
 	
 	@PostMapping
 	@ResponseBody
-	public ModelAndView post(@RequestParam String value,Model model) {
+	public ModelAndView post(@RequestParam String value,Model model) throws IOException {
 		if(value.equals("increaseHour") || value.equals("decreaseHour")) {
 			HandleHourChanging(value);
 		}

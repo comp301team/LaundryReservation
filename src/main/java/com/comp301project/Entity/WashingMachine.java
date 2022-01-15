@@ -1,10 +1,13 @@
 package com.comp301project.Entity;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
+import com.comp301project.database.WriteData;
+
 public class WashingMachine {
 	
-	public String washingMachineID;
+	private String washingMachineID;
 	private int pricePerHour;
 	private List<Integer> reservedHours;
 	
@@ -40,11 +43,11 @@ public class WashingMachine {
 		this.reservedHours = reservedHours;
 	}
 	
-	public void makeReservation(int hour) {
+	public void makeReservation(int hour) throws IOException {
 		if(isAvailableAtThisTime(hour)) {
-			System.out.println("reservation for machine "+this.washingMachineID+" at "+hour+" has done successfully!!");
 			this.reservedHours.add(hour);
 			this.sortReservedHours();
+			WriteData.getWriter().save();
 		}
 	}
 	

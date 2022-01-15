@@ -5,8 +5,7 @@ import com.comp301project.database.ReadData;
 public class FirstThings {
 
 	public static void handleFirstThings() {
-		ReadData readData=new ReadData();
-		readData.ReadDataFromFile();
+		ReadData.getReadDataObject().ReadDataFromFile();;
 	}
 	
 }

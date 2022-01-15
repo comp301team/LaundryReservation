@@ -10,7 +10,16 @@ import com.comp301project.Entity.WashingMachine;
 import com.comp301project.LaundryService.WashingMachineService;
 
 public class ReadData {
-
+	
+	private static ReadData readData;
+	
+	public static ReadData getReadDataObject() {
+		if(readData==null) {
+			readData=new ReadData();
+		}
+		return readData;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public void ReadDataFromFile() {
 		JSONParser parser=new JSONParser();
@@ -33,13 +42,12 @@ public class ReadData {
 			    WashingMachine washingMachine = new WashingMachine (ID,price,reservedHours);
 			    WashingMachineService.getWashingMachineServiceInstance().addNewWashingMachine(washingMachine);
 			}
-			for(int i=0;i<WashingMachineService.getWashingMachineServiceInstance().getAllWashingMachines().size();i++) {
-				System.out.println(WashingMachineService.getWashingMachineServiceInstance().getAllWashingMachines().get(i).getReservedHours());
-			}
 		}
 		catch(Exception exception) {
+			System.out.println("An error is occurred at reading data!");
+			System.out.println("System is returning to default values!");
 			WashingMachineService.getWashingMachineServiceInstance().getAllWashingMachines().clear();
-			//defaultları jsona yazdir
+			WriteDefaultData.getInstance().returnToDefaults();
 		}
 	}
 	
