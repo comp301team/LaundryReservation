@@ -1,7 +1,7 @@
 package com.comp301project.LaundryService;
+
 import java.util.ArrayList;
 import java.util.List;
-
 import com.comp301project.AboutTime.TimeHandler;
 import com.comp301project.Entity.WashingMachine;
 

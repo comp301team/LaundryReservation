@@ -46,7 +46,6 @@ public class ReadData {
 		catch(Exception exception) {
 			System.out.println("An error is occurred at reading data!");
 			System.out.println("System is returning to default values!");
-			WashingMachineService.getWashingMachineServiceInstance().getAllWashingMachines().clear();
 			WriteDefaultData.getInstance().returnToDefaults();
 		}
 	}

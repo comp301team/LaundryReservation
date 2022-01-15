@@ -26,6 +26,15 @@ public class TimeHandler {
 		}
 	}
 	
+	public void handleTime(String type) {
+		if(type.equals("increaseHour")) {
+			this.increaseHourByOne();
+		}
+		else {
+			this.decreaseHourByOne();
+		}
+	}
+	
 	public int getCurrentHour() {
 		return currentHour;
 	}

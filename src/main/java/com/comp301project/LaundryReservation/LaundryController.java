@@ -1,7 +1,6 @@
 package com.comp301project.LaundryReservation;
 
 import java.io.IOException;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +27,7 @@ public class LaundryController {
 	@ResponseBody
 	public ModelAndView post(@RequestParam String value,Model model) throws IOException {
 		if(value.equals("increaseHour") || value.equals("decreaseHour")) {
-			HandleHourChanging(value);
+			TimeHandler.getTimeHandlerObject().handleTime(value);
 		}
 		else {
 			WashingMachineService.getWashingMachineServiceInstance().getWashingMachineById(value).makeReservation(TimeHandler.getTimeHandlerObject().getCurrentHour());
@@ -38,13 +37,4 @@ public class LaundryController {
 	    return modelAndView;
 	}
 		
-	private void HandleHourChanging(String value) {
-		if(value.equals("increaseHour")) {
-			TimeHandler.getTimeHandlerObject().increaseHourByOne();
-		}
-		else {
-			TimeHandler.getTimeHandlerObject().decreaseHourByOne();
-		}
-	}
-	
 }

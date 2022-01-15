@@ -19,6 +19,7 @@ public class WriteDefaultData {
 	public void returnToDefaults() {
 		try {
 			WashingMachineService service=WashingMachineService.getWashingMachineServiceInstance();
+			service.getAllWashingMachines().clear();
 			Integer rh1[] = {4, 5, 8, 11, 12, 13, 17, 19, 20};
 			Integer rh2[] = {0, 1, 3, 4, 7, 10, 12, 13, 14, 16, 17};
 			Integer rh3[] = {4, 6, 7, 12, 13, 14, 18, 19, 23};
