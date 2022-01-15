@@ -8,7 +8,7 @@
 
 <body>
 <h1 class="header" style="font-size: 38px;">Laundry Reservation</h1>
-<div >
+<div>
 	<th:block th:each='washingMachine : ${allMachines}'>
     <div class="column">
         <h2 class="headermachine" th:text="|Machine ${washingMachineStat.index+1}|"></h2>

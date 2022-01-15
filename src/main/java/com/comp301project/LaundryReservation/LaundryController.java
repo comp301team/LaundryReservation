@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import com.comp301project.AboutTime.TimeHandler;
 import com.comp301project.LaundryService.WashingMachineService;
+import com.comp301project.database.WriteDefaultData;
 
 @Controller
 public class LaundryController {
@@ -28,6 +29,9 @@ public class LaundryController {
 	public ModelAndView post(@RequestParam String value,Model model) throws IOException {
 		if(value.equals("increaseHour") || value.equals("decreaseHour")) {
 			TimeHandler.getTimeHandlerObject().handleTime(value);
+		}
+		else if(value.equals("reset")){
+			WriteDefaultData.getInstance().returnToDefaults();
 		}
 		else {
 			WashingMachineService.getWashingMachineServiceInstance().getWashingMachineById(value).makeReservation(TimeHandler.getTimeHandlerObject().getCurrentHour());
