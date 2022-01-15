@@ -83,6 +83,23 @@ button{
   box-shadow: inset 180px 0 0 0 #BE3F4B;
 }
 
+.reset-btn{
+  width: 60px;
+  height: 60px;
+  border:none;
+  color: white;
+  background-color: #06A99E;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 0 #402E32;
+  transition: ease-out 0.3s;
+  font-size: 24px;
+  outline: none;
+}
+
+.reset-btn:hover{
+  box-shadow: inset 60px 0 0 0 #402E32;
+}
+
 .column {
   float: left;
   width: 25%;
@@ -99,5 +116,4 @@ button{
   left: 0;
   bottom: 0;
   width: 100%;
-  text-align: center;
 }

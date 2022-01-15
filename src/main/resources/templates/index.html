@@ -52,6 +52,13 @@
 					>
 				</button>
 		</form>
+
+		<form th:action="@{'/'}" th:method="post" style="float:left; position: absolute; bottom: 0; padding: 0.5%; text-align: center;">
+			<input type="hidden" th:value="reset" name="value" />
+			<button class="reset-btn" type="submit">
+				Reset
+			</button>
+		</form>
 </div>
 </body>
 </html>
