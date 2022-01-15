@@ -44,14 +44,14 @@ public class WriteDefaultData {
 			service.addNewWashingMachine(wm6);
 			service.addNewWashingMachine(wm7);
 			service.addNewWashingMachine(wm8);
-			service.addNewWashingMachine(wm1);
+			/*service.addNewWashingMachine(wm1);
 			service.addNewWashingMachine(wm2);
 			service.addNewWashingMachine(wm3);
 			service.addNewWashingMachine(wm4);
 			service.addNewWashingMachine(wm5);
 			service.addNewWashingMachine(wm6);
 			service.addNewWashingMachine(wm7);
-			service.addNewWashingMachine(wm8);
+			service.addNewWashingMachine(wm8);*/
 			WriteData.getWriter().save();
 		}
 		catch(Exception e){
